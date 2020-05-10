@@ -1,0 +1,65 @@
+package com.syntax.class04;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+
+public class RadioDemo {
+	public static String url="https://demoqa.com/automation-practice-form/";
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.get(url);
+		
+		WebElement maleRadioB=driver.findElement(By.xpath("//input[@id='sex-0']"));
+		
+		System.out.println(maleRadioB.isDisplayed());//true
+		System.out.println(maleRadioB.isEnabled());// true
+		System.out.println(maleRadioB.isSelected());//false
+		
+		System.out.println("Radio Btn is selcted:::"+maleRadioB.isSelected());//false
+
+		System.out.println("+++++++++++++++++++++++++");
+		//first way to click on radio button
+		
+		maleRadioB.click();
+		System.out.println("Radio Btn is selcted:::"+maleRadioB.isSelected());//true
+
+		//second way to click on Radio Buttons
+		List<WebElement> proList=driver.findElements(By.xpath("//input[@name='profession']"));
+		int listSize=proList.size();
+		System.out.println("List of check boxes is ::: "+listSize);
+		
+		String valueToBeSelected="Manual Tester";
+		//shortcut to get for loop: foreach --> control space
+		for (WebElement profession : proList) {
+			if(profession.isEnabled()) {//checking if the checkbox is enabled --> only if it's enable i will perform some action
+				String value=profession.getAttribute("value");// get value of value Attribute
+				System.out.println(value);
+				if(value.equals(valueToBeSelected)) {
+					profession.click();
+					break;
+				}
+				
+			}
+			
+			
+		}
+		
+		
+		
+
+
+		
+		
+
+	}
+
+}

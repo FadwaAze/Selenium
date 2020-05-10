@@ -1,0 +1,210 @@
+package com.syntax.utils;
+
+import java.util.List;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.UnexpectedTagNameException;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class CommonMethods extends BaseClass{
+	/**
+	 * Method that clears and send keys
+	 * @param element
+	 * @param text
+	 */
+	
+	public static void sendText(WebElement element, String text) {
+		element.clear();
+		element.sendKeys(text);
+	}
+	
+	
+	/**
+	 * Method check if Radio/Checkbox is enabled and clicks it
+	 * @param radioOrcheckbox
+	 * @param value
+	 */
+	public static void clickRadioOrCheckbox(List<WebElement> radioOrcheckbox, String value) {
+		String actualValue;
+		for (WebElement el: radioOrcheckbox) {
+			actualValue=el.getAttribute("value").trim();//trim remove the space from the values 
+			if(el.isEnabled()  && actualValue.equals("value")) {// equal value that we pass to parameter
+				el.click();
+				break;
+			}	
+		}	
+	}
+	
+	/**
+	 * Method that checks if text is there and then selects it// by value
+	 * @param element
+	 * @param textToSelect
+	 */
+	
+	public static void selectDdValue(WebElement element, String textToSelect) {
+		
+		try {
+		Select select=new Select(element);
+		
+		List<WebElement> options=select.getOptions();
+		
+		for (WebElement el : options) {
+			if(el.getText().equals(textToSelect)) {
+				select.selectByVisibleText(textToSelect);
+				break;
+			}
+		  }
+		}catch(UnexpectedTagNameException e) {
+			e.printStackTrace();
+		}	
+	}
+	
+	
+	/**
+	 * Method that selects value by index
+	 * @param element
+	 * @param index
+	 */
+	public static void selectDdValue(WebElement element, int index) {//overloading // index should be last choice when we don't have value available
+		
+		try {
+			Select select=new Select(element);
+			int size = select.getOptions().size();
+			
+			if(size> index) {
+				select.selectByIndex(index);
+			}
+		}catch(UnexpectedTagNameException e){
+			e.printStackTrace();
+		}
+	}
+	
+
+	
+	/**
+	 * Method to accept Alert and catches exception if alert is not present
+	 */
+	public static void acceptAlert() {
+		try {
+		Alert alert=driver.switchTo().alert();
+		alert.accept();
+		
+		}catch(NoAlertPresentException e) {// will execute when alert is not there
+			e.printStackTrace();	
+		}
+	}
+	/**
+	 * Method to dismiss Alert and catches exception if alert is not present
+	 */
+	public static void dismissAlert() {
+		try {
+			Alert alert=driver.switchTo().alert();
+			alert.dismiss();
+			
+		}catch(NoAlertPresentException e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * Method to get the text from  alert and catches exception if alert is not present
+	 * @return
+	 */
+	public static String getAlertText() {
+		String alertText = null;
+		try {
+			Alert alert=driver.switchTo().alert();
+			alertText= alert.getText();
+			
+		}catch(NoAlertPresentException e) {
+			e.printStackTrace();
+		}
+		return alertText;
+	}
+	
+	/**
+	 * Method that sends text to alert and catches exception if alert is not present
+	 * @param Text
+	 */
+	public static void SendAlertText(String Text) {
+		try {
+			Alert alert= driver.switchTo().alert();
+			alert.sendKeys(Text);
+			
+		}
+		catch(NoAlertPresentException e) {
+			e.printStackTrace();
+	}
+	}
+	
+	/**
+	 * method to switch to frame based on value
+	 * @param nameOrId
+	 */
+	public static void switchToFrame(String nameOrId) {
+		try {
+			driver.switchTo().frame(nameOrId);
+			
+		}catch(NoSuchFrameException e) {
+			e.printStackTrace();
+		}	
+	}
+	
+	/**
+	 * Method to switch to frame based on WebElement
+	 * @param element
+	 */
+	public static void switchToFrame(WebElement element) {
+		try {
+			driver.switchTo().frame(element);
+			
+		}catch(NoSuchFrameException e) {
+			e.printStackTrace();
+		}	
+	}
+	
+	/**
+	 * Method to switch to frame based on index
+	 * @param index
+	 */
+	public static void switchToFrame(int index) {
+		try {
+			driver.switchTo().frame(index);
+		
+		}catch(NoSuchFrameException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static WebDriverWait getWaitObject() {
+		WebDriverWait wait=new WebDriverWait(driver,Constants.EXPLICIT_WAIT_TIME );
+		return wait;
+	}
+	
+	public static void waitForClickability(WebElement element) {
+		getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
+		
+	}
+	
+	public static void click(WebElement element) {
+		waitForClickability(element);
+		element.click();
+	}
+	
+	
+	
+	
+	
+	
+}
+	
+	
+	
+	
+	
+
+
