@@ -1,0 +1,168 @@
+[1589649748.351][INFO]: Starting ChromeDriver 81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776}) on port 46454
+[1589649748.351][INFO]: Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1589649748.865][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] COMMAND InitSession {
+   "capabilities": {
+      "firstMatch": [ {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [  ],
+            "extensions": [  ]
+         }
+      } ]
+   },
+   "desiredCapabilities": {
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [  ],
+         "extensions": [  ]
+      }
+   }
+}
+[1589649748.869][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1589649748.869][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1589649748.871][INFO]: Launching chrome: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-background-networking --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-blink-features=ShadowDOMV0 --enable-logging --load-extension=/var/folders/2j/rnmn0qqs0pv_mrygc8czk0lh0000gn/T/.com.google.Chrome.u8WFg5/internal --log-level=0 --no-first-run --password-store=basic --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir=/var/folders/2j/rnmn0qqs0pv_mrygc8czk0lh0000gn/T/.com.google.Chrome.6l1emc data:,
+[1589649750.447][INFO]: resolved localhost to ["127.0.0.1","::1"]
+[1589649750.612][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "chrome",
+      "browserVersion": "81.0.4044.138",
+      "chrome": {
+         "chromedriverVersion": "81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776})",
+         "userDataDir": "/var/folders/2j/rnmn0qqs0pv_mrygc8czk0lh0000gn/T/.com.google.Chrome.6l1emc"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:54985"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "mac os x",
+      "proxy": {
+
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "b57f8bdd76fda6320e2f5cfc1c2fa208"
+}
+[1589649750.721][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] COMMAND Navigate {
+   "url": "https://the-internet.herokuapp.com/"
+}
+[1589649750.721][INFO]: Waiting for pending navigations...
+[1589649750.722][INFO]: Done waiting for pending navigations. Status: ok
+[1589649751.225][INFO]: Waiting for pending navigations...
+[1589649751.339][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589649751.443][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589649751.717][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589649751.886][INFO]: Done waiting for pending navigations. Status: ok
+[1589649751.886][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] RESPONSE Navigate
+[1589649751.906][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] COMMAND FindElement {
+   "using": "link text",
+   "value": "File Upload"
+}
+[1589649751.906][INFO]: Waiting for pending navigations...
+[1589649751.908][INFO]: Done waiting for pending navigations. Status: ok
+[1589649751.969][INFO]: Waiting for pending navigations...
+[1589649751.971][INFO]: Done waiting for pending navigations. Status: ok
+[1589649751.971][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "c0da039a-cfbd-40e3-9882-72660c0146c0"
+}
+[1589649751.980][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] COMMAND ClickElement {
+   "id": "c0da039a-cfbd-40e3-9882-72660c0146c0"
+}
+[1589649751.981][INFO]: Waiting for pending navigations...
+[1589649751.982][INFO]: Done waiting for pending navigations. Status: ok
+[1589649752.101][INFO]: Waiting for pending navigations...
+[1589649752.397][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589649752.432][INFO]: Done waiting for pending navigations. Status: ok
+[1589649752.432][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] RESPONSE ClickElement
+[1589649752.437][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] COMMAND FindElement {
+   "using": "css selector",
+   "value": "#file\\-upload"
+}
+[1589649752.437][INFO]: Waiting for pending navigations...
+[1589649752.438][INFO]: Done waiting for pending navigations. Status: ok
+[1589649752.455][INFO]: Waiting for pending navigations...
+[1589649752.457][INFO]: Done waiting for pending navigations. Status: ok
+[1589649752.457][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "3c63842b-dbc0-4ca2-b50e-1f122d7b2183"
+}
+[1589649752.477][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] COMMAND TypeElement {
+   "id": "3c63842b-dbc0-4ca2-b50e-1f122d7b2183",
+   "text": "/Users/fadwaazeroual/Desktop/myfile.png",
+   "value": [ "/", "U", "s", "e", "r", "s", "/", "f", "a", "d", "w", "a", "a", "z", "e", "r", "o", "u", "a", "..." ]
+}
+[1589649752.477][INFO]: Waiting for pending navigations...
+[1589649752.484][INFO]: Done waiting for pending navigations. Status: ok
+[1589649752.515][INFO]: Waiting for pending navigations...
+[1589649752.516][INFO]: Done waiting for pending navigations. Status: ok
+[1589649752.516][INFO]: [b57f8bdd76fda6320e2f5cfc1c2fa208] RESPONSE TypeElement ERROR invalid argument: File not found : /Users/fadwaazeroual/Desktop/myfile.png
+  (Session info: chrome=81.0.4044.138)
